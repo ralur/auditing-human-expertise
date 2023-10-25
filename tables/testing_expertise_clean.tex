@@ -1,0 +1,18 @@
+% latex table generated in R 4.3.0 by xtable 1.8-4 package
+% Tue Oct 24 16:04:27 2023
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{rrrrl}
+  \toprule L & mismatched pairs & swaps that increase loss & swaps that decrease loss & $\tau$ \\ 
+  \midrule 100 & 0 & 5 & 1 & 0.061 \\ 
+  250 & 0 & 12 & 1 & 0.003 \\ 
+  500 & 0 & 21 & 2 & <.001 \\ 
+  1000 & 0 & 42 & 2 & <.001 \\ 
+  1808 & 265 & 66 & 4 & <.001 \\ 
+   \bottomrule \end{tabular}
+\caption{The results of running ExpertTest, where each pair of patients is chosen to be as similar as possible with respect to the nine (discrete) inputs to the Glasgow-Blatchford score. $L$ indicates the number of pairs selected for the test, of which `mismatched pairs' are not identical to each other.
+                   Swaps that decrease (respectively, increase) loss indicates how many of the $L$ pairs result in a decrease (respectively, increase) in the 0/1 loss
+                   when their corresponding hospitalization decisions are exchanged with each other. $\tau$ is the p-value obtained
+                   from running ExpertTest.} 
+\label{tab:testing for expertise clean}
+\end{table}

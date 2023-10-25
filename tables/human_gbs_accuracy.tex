@@ -1,0 +1,23 @@
+% latex table generated in R 4.3.0 by xtable 1.8-4 package
+% Tue Oct 24 16:59:29 2023
+\begin{table}[!htbp]
+\centering
+\begin{tabular}{lllll}
+  \toprule Decision Rule & Fraction Hospitalized & Accuracy & Sensitivity & Specificity \\ 
+  \midrule Physician Discretion & 0.86 ± 0.02 & 0.55 ± 0.02 & 0.99 ± 0.00 & 0.24 ± 0.02 \\ 
+  Admit GBS > 0 & 0.88 ± 0.02 & 0.53 ± 0.02 & 0.99 ± 0.00 & 0.19 ± 0.02 \\ 
+  Admit GBS > 1 & 0.80 ± 0.02 & 0.60 ± 0.02 & 0.98 ± 0.00 & 0.33 ± 0.02 \\ 
+  Admit GBS > 2 & 0.73 ± 0.02 & 0.66 ± 0.02 & 0.97 ± 0.00 & 0.43 ± 0.02 \\ 
+  Admit GBS > 7 & 0.40 ± 0.02 & 0.79 ± 0.02 & 0.73 ± 0.02 & 0.84 ± 0.02 \\ 
+   \bottomrule \end{tabular}
+\caption{
+Comparing the accuracy of physician hospitalization decisions (`Physician Discretion') to those made by thresholding the GBS.
+For example, `Admit GBS $> 1$' hospitalizes patients with a GBS strictly larger than $1$.  
+`Fraction Hospitalized' indicates the fraction of patients hospitalized by each rule.
+`Accuracy' indicates the 0/1 accuracy of each rule, where a decision is correct if it hospitalizes a patient who suffers an adverse outcome (as defined above) or discharges a patient who does not.
+`Sensitivity' indicates the fraction of patients who suffer an adverse outcome that are correctly hospitalized,
+and `Specificity' indicates the fraction of patients who do not suffer an adverse outcome that are correctly discharged.
+Results are reported to $\pm 2$ standard errors. 
+} 
+\label{tab:physician and gbs perf}
+\end{table}

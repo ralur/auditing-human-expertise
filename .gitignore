@@ -47,3 +47,12 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Intermediate experiment data
+*.RData
+
+# Confidential patient data
+data/gib_gbs_clean_inputs_normalized.csv
+data/gib_gbs_clean_inputs.csv
+data/gib_raw_values_normalized.csv
+data/gib_raw_values.csv
