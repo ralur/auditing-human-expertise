@@ -56,3 +56,6 @@ data/gib_gbs_clean_inputs_normalized.csv
 data/gib_gbs_clean_inputs.csv
 data/gib_raw_values_normalized.csv
 data/gib_raw_values.csv
+
+# DS_Store
+.DS_Store

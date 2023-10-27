@@ -25,8 +25,8 @@ save.tables <- TRUE
 include.distance <- TRUE
 
 #input_file <- 'gib_raw_values_normalized.csv'
-#input_file <- 'gib_gbs_clean_inputs_normalized.csv'
-input_file <- 'gib_score_only.csv'
+input_file <- 'gib_gbs_clean_inputs_normalized.csv'
+#input_file <- 'gib_score_only.csv'
 
 suffix = ''
 title = ''
@@ -35,7 +35,7 @@ feature_space_desc = ''
 if (input_file == 'gib_raw_values_normalized.csv') {
   suffix = '_raw'
   title <- 'Pairwise Distances in Original Feature Space'
-  feature_space_desc = 'nine patient characteristics. The Glasgow-Blatchford score is computed from these nine characteristics, after a pre-processing step which discretizes each feature..'
+  feature_space_desc = 'nine patient characteristics. The Glasgow-Blatchford score is computed from these nine characteristics, after a pre-processing step which discretizes each feature.'
 } else if (input_file == 'gib_gbs_clean_inputs_normalized.csv') {
   suffix = '_clean'
   title <- 'Pairwise Distances in Discretized Feature Space'
@@ -60,11 +60,9 @@ if (!use.saved.data) {
   
   if (input_file != 'gib_score_only.csv') {
     d2 <- d2 %>% select(-total_score)  
-  }  
+  }
+  max.L <- floor(nrow(d2) / 2)
 }
-
-
-max.L <- floor(nrow(d2) / 2)
 
 if (!file.exists(glue('../data/res.100{suffix}.RData')) || !use.saved.data) {
   res.100 <- generate_p_value(d2, L = 100, K = 1000, loss_type = '01', return.diagnostics = T)
@@ -97,7 +95,7 @@ load(glue('../data/res.500{suffix}.RData'))
 load(glue('../data/res.1000{suffix}.RData'))
 load(glue('../data/res.max{suffix}.RData'))
 
-
+max.L <- res.max$paired %>% nrow
 
 table <- print_table(res.100, 100) %>%
   rbind(print_table(res.250, 250)) %>%
